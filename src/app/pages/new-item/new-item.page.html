@@ -17,6 +17,28 @@
       <ion-label color="primary" position="floating">Description</ion-label>
       <ion-input type="text" formControlName="description" required></ion-input>
     </ion-item>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label color="primary" position="floating">Priority</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Low</ion-label>
+          <ion-radio slot="start"  formControlName="priority" value="low"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Medium</ion-label>
+          <ion-radio slot="start"  formControlName="priority" value="medium"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>High</ion-label>
+          <ion-radio slot="start"  formControlName="priority" value="high"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!new_item_form.valid">Create</ion-button>
   </form>
 

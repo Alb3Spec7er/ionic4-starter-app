@@ -21,7 +21,8 @@ export class NewItemPage implements OnInit {
   ngOnInit() {
     this.new_item_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      description: new FormControl('', Validators.required),
+      priority: new FormControl('')
     });
   }
 
@@ -30,7 +31,7 @@ export class NewItemPage implements OnInit {
   }
 
   createItem(value){
-    this.itemService.createItem(value.title, value.description);
+    this.itemService.createItem(value.title, value.description, value.priority);
     this.new_item_form.reset();
     this.goBack();
   }

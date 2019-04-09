@@ -30,7 +30,8 @@ export class UpdateItemPage implements OnInit {
         } else{
           this.edit_item_form = this.formBuilder.group({
             title: new FormControl(this.item.title, Validators.required),
-            description: new FormControl(this.item.description, Validators.required)
+            description: new FormControl(this.item.description, Validators.required),
+            priority: new FormControl(this.item.priority)
           });
         }
       }
@@ -45,7 +46,8 @@ export class UpdateItemPage implements OnInit {
     let newValues = {
       id: this.item.id,
       title: value.title,
-      description: value.description
+      description: value.description,
+      priority: value.priority
     }
     this.itemService.updateItem(newValues);
     this.goBack();
